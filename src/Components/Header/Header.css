@@ -1,0 +1,116 @@
+.masthead {
+  border-bottom: 3px double var(--ink);
+  padding: 0 48px;
+  background: var(--cream);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  /* Default text on cream; beats MUI CssBaseline / theme white */
+  color: var(--ink);
+}
+
+.masthead-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0 10px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.masthead-dateline {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.masthead-name {
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-align: center;
+  flex: 1;
+  color: var(--ink) !important;
+}
+
+.masthead-avail {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-align: right;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.avail-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: masthead-blink 2.5s infinite;
+}
+
+@keyframes masthead-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.masthead-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  padding: 8px 0;
+  flex-wrap: wrap;
+}
+
+.masthead-nav a {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 20px;
+  border-right: 1px solid var(--rule);
+  opacity: 0.88;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.masthead-nav a:first-child {
+  border-left: 1px solid var(--rule);
+}
+
+.masthead-nav a:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .masthead {
+    padding: 0 20px;
+  }
+
+  .masthead-top {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .masthead-dateline,
+  .masthead-avail {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .masthead-name {
+    font-size: clamp(26px, 8vw, 36px);
+    order: -1;
+  }
+}

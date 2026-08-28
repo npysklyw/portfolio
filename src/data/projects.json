@@ -1,0 +1,232 @@
+[
+  {
+    "skills": ["Python", "Streamlit", "PostgreSQL", "Supabase", "GitHub Actions", "Pandas"],
+    "name": "Sentiment Terminal",
+    "short": "Real-time dashboard tracking price and news sentiment for major tech stocks.",
+    "description": "A data pipeline that tracks price and news sentiment for tech equities like NVDA, AAPL, and AMD. It automates the ingestion of financial news and price data, computes technical indicators (RSI, MACD, volatility) from scratch, and blends them with sentiment into a composite signal and confidence score.",
+    "demo": "https://sentient-tracker-f6bj9pide5x4k2pc4mwd7s.streamlit.app/",
+    "github": "https://github.com/npysklyw/sentiment-terminal",
+    "information": {
+      "title": "Sentiment Terminal",
+      "mainDescription": "Built to explore combining price action with news sentiment into a single signal. An automated pipeline, triggered by GitHub Actions, fetches price and sentiment data on a schedule. The core logic computes RSI, MACD, and realized volatility from scratch, then blends them with sentiment strength into a weighted signal score, along with a confidence score based on signal agreement and volatility. Data is stored in Supabase (Postgres), and the Streamlit dashboard surfaces it through a live market table, multi-asset comparison view, sentiment heatmap, and a per-asset 'market mood' gauge."
+    }
+},
+  {
+    "skills": ["React Native", "TypeScript", "FastAPI", "PostgreSQL", "JSON", "Mobile UI"],
+    "name": "MESBG Army Builder",
+    "short": "Mobile app for building and managing Middle-earth Strategy Battle Game armies.",
+    "description": "A cross-platform mobile app for creating and managing tabletop armies, featuring dynamic unit filtering, real-time state tracking, and a scalable JSON-driven data system. Designed for fast list-building and in-game usability with responsive UI and offline support.",
+    "demo": "https://youtube.com/shorts/nFZo2IQNDMg",
+    "github": "",
+    "information": {
+      "title": "MESBG Army Builder",
+      "mainDescription": "A passion project built for players of the Middle-earth Strategy Battle Game, focused on solving the friction of manual army list management. The app transforms complex unit data into a structured JSON-based system, enabling fast filtering, dynamic state tracking (e.g., marking units as defeated), and responsive rendering across devices. Designed with an offline-first architecture, the system is now being expanded to include a FastAPI and PostgreSQL backend to support cloud sync, persistent storage, and multi-device access."
+    }
+  },
+  {
+    "skills": ["Flutter", "Sklearn", "Python", "Flask", "Docker"],
+    "name": "Exercise Correction Application",
+    "short": "Corrects the form of your reps at the gym",
+    "description": "Application that corrects user exercise form. Flutter is used to develop an application for iOS and Android. The backend was created with Flask, and built into a docker container which is hosted on a AWS. The model uses Tensorflow's posenet model for keypoint recongition, then further uses Decision trees to determine form correctness with SkLearn.",
+    "demo": "https://www.youtube.com/watch?v=k6BvWMPDjgU",
+    "github": "https://github.com/axrios/Assignment4-Bigbase",
+    "information": {
+      "title": "Exercise Correction",
+      "images": [
+        {
+          "imageName": "correctThree",
+          "imageDescription": "Frontend interface of the application"
+        },
+        {
+          "imageName": "correctOne",
+          "imageDescription": "Representing sum of angles between joints for correct exercise samples"
+        },
+        {
+          "imageName": "correctTwo",
+          "imageDescription": "Representing sum of angles between joints for incorrect exercise samples"
+        }
+      ],
+      "mainDescription": "Capstone project currently in progress throughout my fourth year of engineering. It involves trying to correct user form during exercises based on video input. The hardest part of the prject is form recognition. Currently we look into series differentiating methods such as Dynamic Time Warping, and Cosine Similarity of exercise sequences, however we have move forward with a Random Forest Regressor model. This has demonstrated the most consistent scores for exercise correctness scoring."
+    }
+  },
+ {
+  "skills": ["Python", "Scikit-learn", "Flask", "Docker", "Machine Learning"],
+  "name": "Enterprise Endgame Evaluator",
+  "short": "Machine learning system for predicting corporate bankruptcy using financial ratio data.",
+  "description": "Developed a machine learning pipeline to predict corporate bankruptcy using a dataset of 6,800+ companies with 95 financial features. Implemented data preprocessing techniques including StandardScaler normalization and SMOTE to address severe class imbalance (3.2% bankruptcy rate). Conducted feature selection using ExtraTreesClassifier, reducing dimensionality to the top 20 most impactful features.\n\nTrained and evaluated multiple models including Random Forest, XGBoost, SVM, KNN, AdaBoost, and Logistic Regression using Scikit-learn. Performed hyperparameter tuning via grid search and compared performance across accuracy, precision, recall, and F1-score metrics. Random Forest achieved the best performance (~96% accuracy), demonstrating strong predictive capability and generalization.\n\nAnalyzed feature importance to identify key financial indicators such as debt ratio and net worth, aligning model insights with real-world financial risk assessment practices. Built the system with a focus on scalability and reproducibility of experiments.",
+  "demo": "https://drive.google.com/file/d/1hgNaGO0Crhm13hyRq0uI6Kxb3A0bBrIY/view?usp=sharing",
+  "github": "",
+  "information": {
+    "title": "Enterprise Endgame Evaluator",
+    "images": [],
+    "mainDescription": "This project explores the use of machine learning for financial risk prediction, specifically bankruptcy classification. The system evaluates multiple models on structured financial data, addressing challenges such as class imbalance and high feature dimensionality. Through feature importance analysis and model comparison, Random Forest emerged as the most effective approach, achieving high accuracy while maintaining interpretability. The project highlights the practical application of ML in financial decision-making and risk management."
+  }
+},
+  {
+    "skills": ["React", "Flask", "Express"],
+    "name": "AlgoLearn",
+    "short": " Simple yet fun website one can use when trying to learn basic algorithms",
+    "description": "Algorithm visualization game to teach players about algorithms. Players solve incrementally difficult sorting patterns, which should help solidify concepts. We implemented a profile feature which allows for better gamification by adding competitiveness. Users can view their personal best timess, alongside others personal best times. The website and game was built with JavaScript with framework React. The backend was created using Flask.",
+    "demo": "https://www.youtube.com/watch?v=sQ74pzV0IeM",
+    "github": "www.google.com",
+    "information": {
+      "title": "Algorithm Visualization Game",
+      "images": [
+        {
+          "imageName": "algoOne",
+          "imageDescription": "Game start page"
+        },
+        {
+          "imageName": "algoTwo",
+          "imageDescription": "Different algorithm settings"
+        },
+        {
+          "imageName": "algoThree",
+          "imageDescription": "Playing the algorithm game"
+        },
+        {
+          "imageName": "algoFour",
+          "imageDescription": "Game lets player know when they played algorithm correctly"
+        },
+        {
+          "imageName": "algoFive",
+          "imageDescription": "Further in game we see list is unsorted so the game visualizes this"
+        },
+        {
+          "imageName": "algoSix",
+          "imageDescription": "Sorting correctly is shown to user"
+        },
+        {
+          "imageName": "algoSeven",
+          "imageDescription": "Sorting finished!"
+        }
+      ],
+      "mainDescription": "Project built to learn fundamentals of agile development. The project was made in React.js and took plenty of work to visualize animations correctly. It was successfully completed however, and was polished into a fully working game! Includes a statistics, and account functionalities in Python."
+    }
+  },
+{
+  "skills": ["JavaScript", "Networking", "Distributed Systems", "Peer-to-Peer Architecture"],
+  "name": "ImageShare",
+  "short": "Decentralized peer-to-peer image sharing network with query propagation",
+  "description": "Built a decentralized peer-to-peer (P2P) image sharing system from scratch, enabling nodes to dynamically join a network and discover images without a central server. Designed a query propagation mechanism where search requests are broadcast across peers using a distributed hash table-inspired approach, with responses routed back to the origin node. Implemented a custom packet protocol for communication between peers, supporting efficient message passing and data transfer across the network.",
+  "demo": "https://github.com/npysklyw/Computer_Network_Applications/tree/main/assignment_three",
+  "github": ""
+},
+  {
+    "skills": ["React", "Express", "MySQL"],
+    "name": "Game Manage",
+    "short": "Website built for video game stores(Gamestop, EB Games) to manage their inventory, revenue, and sales",
+    "description": "A game store management site for a hypothetical video game store manager. React.js was used to build a clean frontend interface. Express was used to develop a backend, which is hosted on Google Cloud. The SQL database is hosted on Google Cloud's PaaS SQL servers to manage complexity and reduce configuration.",
+    "demo": "https://github.com/npysklyw/game-store-management",
+    "github": "https://github.com/npysklyw/game-store-management",
+    "information": {
+      "title": "Tool used for Game Store Management",
+      "images": [
+        {
+          "imageName": "storeOne",
+          "imageDescription": "Main Page of Application"
+        },
+        {
+          "imageName": "storeTwo",
+          "imageDescription": "Functionalities of manager top edit store data"
+        },
+        {
+          "imageName": "storeThree",
+          "imageDescription": "Different Mechanisms for manager to view games"
+        },
+        {
+          "imageName": "storeFour",
+          "imageDescription": "Variety of methods to view store data statistics"
+        },
+        {
+          "imageName": "storeFive",
+          "imageDescription": "Here we view the ad revenue of store branches vs game revenue"
+        }
+      ],
+      "mainDescription": "A project made for the database course at Western University. Uses a variety of MYSql functions for each functionality of the application. The data used was fake data from Kaggle. The project focus is on the backend, and we simply provided a small frontend interface to display the workings of the applicatino to course instructors."
+    }
+  },
+  {
+    "skills": ["C#", "Unity"],
+    "name": "2D RPG in Unity",
+    "short": "A story-driven RPG built in Unity with enemy battles, power-ups, and level progression.",
+    "description": "Designed and developed a 2D RPG game in Unity using C# and the software development lifecycle. The application was planned out beforehand with design documents, then built in Unity over the term. The desired product was completed wholly, with a full game at the end of the term.",
+    "demo": "https://github.com/nipunaprs/SE2250Project",
+    "github": "https://github.com/nipunaprs/SE2250Project",
+    "information": {
+      "title": "2D RPG in Unity",
+      "images": [
+        {
+          "imageName": "gameTwo",
+          "imageDescription": "Start screen where a player will choose a powerup ability"
+        },
+        {
+          "imageName": "gameOne",
+          "imageDescription": "Main Protagonist beside one of the main foes"
+        }
+      ],
+      "mainDescription": "Project built for SE2250 Game Design course. It involved an RPG style game with the main character having a goal of reaching the end. The start screen demonsrates this goal. The character progresses through a set of three different levels with obstacles and enemies. As the character fights and kills monsters they gain experience. Experience leads to leveling up with will provide new power ups to the character and more health."
+    }
+  },
+  {
+    "skills": ["C", "Hardware Skills"],
+    "name": "Ambient Light",
+    "short": "Hardware-based lighting system that adapts based on temperature and season.",
+    "description": "ECE3375 final project showcasing software prototype and design of systems at a low level with hardware interaction. This project required students to fully understand the code interaction with hardware to ensure accurate prototyping was done.",
+    "demo": "https://github.com/npysklyw/TemperateAmb/blob/main/ECE3373-Project-npysklyw.pdf",
+    "github": "https://github.com/npysklyw/TemperateAmb/blob/main/ECE3373-Project-npysklyw.pdf",
+    "information": {
+      "title": "Temperate Ambient Light",
+      "images": [
+        {
+          "imageName": "ambOne",
+          "imageDescription": "System prototype diagram"
+        },
+        {
+          "imageName": "ambTwo",
+          "imageDescription": "Prototype code for encoding of seasonal values"
+        }
+      ],
+      "mainDescription": "This was a hardware prototype project build for ECE3375 design systems. The final project was a ambient light system. The light would change based on temperature of the present environment and current season. Different hardware was reseached, and considered in final design."
+    }
+  },
+  {
+    "skills": ["Java", "SQL", "Software Design"],
+    "name": "Publisher Desktop Application",
+    "short": "Desktop app for managing and updating publishing company database records.",
+    "description": "Database management tool for a hypothetical publishing company iPublisher. The tool can be used to view the SQL database of publisher data, and edit this data.",
+    "demo": "https://github.com/npysklyw/publisher-database/tree/master",
+    "github": "",
+    "information": {
+      "title": "Publisher Desktop Application",
+      "images": [],
+      "mainDescription": "Desktop app for managing and updating publishing company database records."
+    }
+  },
+  {
+    "skills": ["Keras", "Flask", "Python", "HTML"],
+    "name": "Alzheimer Stage Prediction",
+    "short": "AI-powered tool that predicts the stage of Alzheimer's from MRI scans.",
+    "description": "AI-based web application that could predict a stage of Dementia in an Alzheimer’s patient upon analysis of an MRI skull scan.",
+    "demo": "https://github.com/npysklyw/alz-class",
+    "github": "https://github.com/npysklyw/alz-class",
+    "information": {
+      "title": "Alzheimer Stage Prediction",
+      "images": [
+        {
+          "imageName": "alzOne",
+          "imageDescription": "Home page of the project"
+        },
+        {
+          "imageName": "alzTwo",
+          "imageDescription": "Further information on the project"
+        },
+        {
+          "imageName": "alzThree",
+          "imageDescription": "Functionality of the appliciation"
+        }
+      ],
+      "mainDescription": "Project done with WAI, were I lead a team of summer students to develop a project. Dementia is a horrific symptom of the disease, and we intended to attempt to classify dementia cases based on MRI scans of Alzheimer patients. I lead the team over the summer to teach AI fundamentals. These fundamentals were applied to the problem, and a solution was developed. The AI model was deployed to a HTML site. The AI model used transfer learning. A VGG16 pret-trained model was loaded, and a few layers were added at the end to train to the alzheimer data. The model had good accuracy, however was tailored only to the training and test data of our set. It was a great experience in learning machine learning, alongside software development."
+    }
+  }
+]
