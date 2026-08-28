@@ -1,6 +1,13 @@
 [
   {
-    "skills": ["Python", "Streamlit", "PostgreSQL", "Supabase", "GitHub Actions", "Pandas"],
+    "skills": [
+      "Python",
+      "Streamlit",
+      "PostgreSQL",
+      "Supabase",
+      "GitHub Actions",
+      "Pandas"
+    ],
     "name": "Sentiment Terminal",
     "short": "Real-time dashboard tracking price and news sentiment for major tech stocks.",
     "description": "A data pipeline that tracks price and news sentiment for tech equities like NVDA, AAPL, and AMD. It automates the ingestion of financial news and price data, computes technical indicators (RSI, MACD, volatility) from scratch, and blends them with sentiment into a composite signal and confidence score.",
@@ -10,14 +17,21 @@
       "title": "Sentiment Terminal",
       "mainDescription": "Built to explore combining price action with news sentiment into a single signal. An automated pipeline, triggered by GitHub Actions, fetches price and sentiment data on a schedule. The core logic computes RSI, MACD, and realized volatility from scratch, then blends them with sentiment strength into a weighted signal score, along with a confidence score based on signal agreement and volatility. Data is stored in Supabase (Postgres), and the Streamlit dashboard surfaces it through a live market table, multi-asset comparison view, sentiment heatmap, and a per-asset 'market mood' gauge."
     }
-},
+  },
   {
-    "skills": ["React Native", "TypeScript", "FastAPI", "PostgreSQL", "JSON", "Mobile UI"],
+    "skills": [
+      "React Native",
+      "TypeScript",
+      "FastAPI",
+      "PostgreSQL",
+      "JSON",
+      "Mobile UI"
+    ],
     "name": "MESBG Army Builder",
     "short": "Mobile app for building and managing Middle-earth Strategy Battle Game armies.",
     "description": "A cross-platform mobile app for creating and managing tabletop armies, featuring dynamic unit filtering, real-time state tracking, and a scalable JSON-driven data system. Designed for fast list-building and in-game usability with responsive UI and offline support.",
     "demo": "https://youtube.com/shorts/nFZo2IQNDMg",
-    "github": "",
+    "github": "https://github.com/npysklyw/mesbg-companion",
     "information": {
       "title": "MESBG Army Builder",
       "mainDescription": "A passion project built for players of the Middle-earth Strategy Battle Game, focused on solving the friction of manual army list management. The app transforms complex unit data into a structured JSON-based system, enabling fast filtering, dynamic state tracking (e.g., marking units as defeated), and responsive rendering across devices. Designed with an offline-first architecture, the system is now being expanded to include a FastAPI and PostgreSQL backend to support cloud sync, persistent storage, and multi-device access."
@@ -49,19 +63,19 @@
       "mainDescription": "Capstone project currently in progress throughout my fourth year of engineering. It involves trying to correct user form during exercises based on video input. The hardest part of the prject is form recognition. Currently we look into series differentiating methods such as Dynamic Time Warping, and Cosine Similarity of exercise sequences, however we have move forward with a Random Forest Regressor model. This has demonstrated the most consistent scores for exercise correctness scoring."
     }
   },
- {
-  "skills": ["Python", "Scikit-learn", "Flask", "Docker", "Machine Learning"],
-  "name": "Enterprise Endgame Evaluator",
-  "short": "Machine learning system for predicting corporate bankruptcy using financial ratio data.",
-  "description": "Developed a machine learning pipeline to predict corporate bankruptcy using a dataset of 6,800+ companies with 95 financial features. Implemented data preprocessing techniques including StandardScaler normalization and SMOTE to address severe class imbalance (3.2% bankruptcy rate). Conducted feature selection using ExtraTreesClassifier, reducing dimensionality to the top 20 most impactful features.\n\nTrained and evaluated multiple models including Random Forest, XGBoost, SVM, KNN, AdaBoost, and Logistic Regression using Scikit-learn. Performed hyperparameter tuning via grid search and compared performance across accuracy, precision, recall, and F1-score metrics. Random Forest achieved the best performance (~96% accuracy), demonstrating strong predictive capability and generalization.\n\nAnalyzed feature importance to identify key financial indicators such as debt ratio and net worth, aligning model insights with real-world financial risk assessment practices. Built the system with a focus on scalability and reproducibility of experiments.",
-  "demo": "https://drive.google.com/file/d/1hgNaGO0Crhm13hyRq0uI6Kxb3A0bBrIY/view?usp=sharing",
-  "github": "",
-  "information": {
-    "title": "Enterprise Endgame Evaluator",
-    "images": [],
-    "mainDescription": "This project explores the use of machine learning for financial risk prediction, specifically bankruptcy classification. The system evaluates multiple models on structured financial data, addressing challenges such as class imbalance and high feature dimensionality. Through feature importance analysis and model comparison, Random Forest emerged as the most effective approach, achieving high accuracy while maintaining interpretability. The project highlights the practical application of ML in financial decision-making and risk management."
-  }
-},
+  {
+    "skills": ["Python", "Scikit-learn", "Flask", "Docker", "Machine Learning"],
+    "name": "Enterprise Endgame Evaluator",
+    "short": "Machine learning system for predicting corporate bankruptcy using financial ratio data.",
+    "description": "Developed a machine learning pipeline to predict corporate bankruptcy using a dataset of 6,800+ companies with 95 financial features. Implemented data preprocessing techniques including StandardScaler normalization and SMOTE to address severe class imbalance (3.2% bankruptcy rate). Conducted feature selection using ExtraTreesClassifier, reducing dimensionality to the top 20 most impactful features.\n\nTrained and evaluated multiple models including Random Forest, XGBoost, SVM, KNN, AdaBoost, and Logistic Regression using Scikit-learn. Performed hyperparameter tuning via grid search and compared performance across accuracy, precision, recall, and F1-score metrics. Random Forest achieved the best performance (~96% accuracy), demonstrating strong predictive capability and generalization.\n\nAnalyzed feature importance to identify key financial indicators such as debt ratio and net worth, aligning model insights with real-world financial risk assessment practices. Built the system with a focus on scalability and reproducibility of experiments.",
+    "demo": "https://drive.google.com/file/d/1hgNaGO0Crhm13hyRq0uI6Kxb3A0bBrIY/view?usp=sharing",
+    "github": "",
+    "information": {
+      "title": "Enterprise Endgame Evaluator",
+      "images": [],
+      "mainDescription": "This project explores the use of machine learning for financial risk prediction, specifically bankruptcy classification. The system evaluates multiple models on structured financial data, addressing challenges such as class imbalance and high feature dimensionality. Through feature importance analysis and model comparison, Random Forest emerged as the most effective approach, achieving high accuracy while maintaining interpretability. The project highlights the practical application of ML in financial decision-making and risk management."
+    }
+  },
   {
     "skills": ["React", "Flask", "Express"],
     "name": "AlgoLearn",
@@ -104,14 +118,19 @@
       "mainDescription": "Project built to learn fundamentals of agile development. The project was made in React.js and took plenty of work to visualize animations correctly. It was successfully completed however, and was polished into a fully working game! Includes a statistics, and account functionalities in Python."
     }
   },
-{
-  "skills": ["JavaScript", "Networking", "Distributed Systems", "Peer-to-Peer Architecture"],
-  "name": "ImageShare",
-  "short": "Decentralized peer-to-peer image sharing network with query propagation",
-  "description": "Built a decentralized peer-to-peer (P2P) image sharing system from scratch, enabling nodes to dynamically join a network and discover images without a central server. Designed a query propagation mechanism where search requests are broadcast across peers using a distributed hash table-inspired approach, with responses routed back to the origin node. Implemented a custom packet protocol for communication between peers, supporting efficient message passing and data transfer across the network.",
-  "demo": "https://github.com/npysklyw/Computer_Network_Applications/tree/main/assignment_three",
-  "github": ""
-},
+  {
+    "skills": [
+      "JavaScript",
+      "Networking",
+      "Distributed Systems",
+      "Peer-to-Peer Architecture"
+    ],
+    "name": "ImageShare",
+    "short": "Decentralized peer-to-peer image sharing network with query propagation",
+    "description": "Built a decentralized peer-to-peer (P2P) image sharing system from scratch, enabling nodes to dynamically join a network and discover images without a central server. Designed a query propagation mechanism where search requests are broadcast across peers using a distributed hash table-inspired approach, with responses routed back to the origin node. Implemented a custom packet protocol for communication between peers, supporting efficient message passing and data transfer across the network.",
+    "demo": "https://github.com/npysklyw/Computer_Network_Applications/tree/main/assignment_three",
+    "github": ""
+  },
   {
     "skills": ["React", "Express", "MySQL"],
     "name": "Game Manage",
