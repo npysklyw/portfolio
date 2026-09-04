@@ -5,7 +5,6 @@ import {
   featuredProjects,
   getProject,
   projects,
-  publicArchive,
 } from "../content/projects";
 import type { SystemStage } from "../content/types";
 
@@ -55,24 +54,24 @@ function Architecture({
 export function ProjectPage() {
   const { slug } = useParams();
   const project = getProject(slug);
-  if (!project)
+  const publicProjects = [...featuredProjects, ...earlierStudies];
+  if (!project || !publicProjects.includes(project))
     return (
       <main className="not-found">
         <p className="eyebrow">404 / Record absent</p>
-        <h1>That project is not in the archive.</h1>
+        <h1>That project is not in the public selection.</h1>
         <Link to="/work">Return to work →</Link>
       </main>
     );
   const index = projects.indexOf(project);
-  const publicProjects = [
-    ...featuredProjects,
-    ...earlierStudies,
-    ...publicArchive,
-  ];
   const publicIndex = publicProjects.indexOf(project);
   const next =
     publicProjects[(Math.max(publicIndex, 0) + 1) % publicProjects.length];
-  const reflectionNumber = project.system ? "05" : "04";
+  const reflectionNumber = project.verification
+    ? "06"
+    : project.system
+      ? "05"
+      : "04";
   return (
     <main className="case-study">
       <Link className="back-link" to="/work">
@@ -102,7 +101,7 @@ export function ProjectPage() {
           <div className="case-links">
             {project.demo && (
               <a href={project.demo} target="_blank" rel="noreferrer">
-                Live demo ↗
+                {project.demoLabel ?? "Live demo"} ↗
               </a>
             )}
             {project.github && (
@@ -116,6 +115,7 @@ export function ProjectPage() {
           kind={project.visual}
           label={project.title}
           image={project.coverImage}
+          detailed
         />
       </header>
       <section className="case-section">
@@ -155,6 +155,26 @@ export function ProjectPage() {
               </article>
             ))}
           </div>
+          {project.evidence && (
+            <aside className="case-evidence">
+              <p className="eyebrow">Supporting example</p>
+              <h3>{project.evidence.title}</h3>
+              <p>{project.evidence.detail}</p>
+            </aside>
+          )}
+        </section>
+      )}
+      {project.verification && (
+        <section className="case-section verification-section">
+          <div>
+            <p className="eyebrow">05 / Verification</p>
+            <h2>Current checks.</h2>
+          </div>
+          <ul>
+            {project.verification.map((check) => (
+              <li key={check}>{check}</li>
+            ))}
+          </ul>
         </section>
       )}
       <section className="case-section split">

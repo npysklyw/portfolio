@@ -10,7 +10,12 @@ export function SiteHeader() {
   const close = () => setOpen(false);
   return (
     <header className="site-header">
-      <Link className="wordmark" to="/" onClick={close}>
+      <Link
+        aria-label="Nicholas Pysklywec, Software Engineer — home"
+        className="wordmark"
+        to="/"
+        onClick={close}
+      >
         <span className="wordmark-index">NP / 26</span>
         <span className="wordmark-location">Toronto</span>
       </Link>

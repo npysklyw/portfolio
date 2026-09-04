@@ -1,8 +1,13 @@
 import type { VisualKind } from "../content/types";
 
-type Props = { kind: VisualKind; label: string; image?: string };
+type Props = {
+  kind: VisualKind;
+  label: string;
+  image?: string;
+  detailed?: boolean;
+};
 
-export function ProjectVisual({ kind, label, image }: Props) {
+export function ProjectVisual({ kind, label, image, detailed = false }: Props) {
   if (image)
     return (
       <figure className="project-visual image-cover">
@@ -87,74 +92,84 @@ export function ProjectVisual({ kind, label, image }: Props) {
   if (kind === "graph")
     return (
       <svg
-        className="project-visual system-visual"
-        viewBox="0 0 760 440"
+        className="project-visual system-visual army-domain-visual"
+        viewBox={detailed ? "0 0 760 500" : "0 0 760 350"}
         role="img"
         aria-labelledby="army-title army-desc"
       >
-        <title id="army-title">MESBG army-list data structure</title>
+        <title id="army-title">MESBG Army Builder system architecture</title>
         <desc id="army-desc">
-          An army contains warbands led by heroes, each connected to units and
-          contributing to a total points allocation.
+          Source-backed JSON catalogues pass through exact lookup and structural
+          auditing into a TypeScript army domain. Calculation and validation
+          feed the React Native builder, and a local repository stores armies
+          offline.
         </desc>
-        <g className="roster-root">
-          <rect x="270" y="30" width="220" height="70" />
-          <text x="290" y="59">
-            ARMY LIST
-          </text>
-          <text className="detail" x="290" y="83">
-            Σ points / roster state
-          </text>
-        </g>
-        <g className="roster-lines">
-          <path d="M380 100v45M175 145h410M175 145v40M585 145v40M175 255v40M585 255v40" />
+        <g className="system-guide">
+          <path d="M35 250H725" />
         </g>
         <g className="system-node">
-          <rect x="65" y="185" width="220" height="70" />
-          <text x="82" y="214">
-            WARBAND 01
+          <rect x="35" y="55" width="195" height="82" />
+          <text x="52" y="84">
+            SOURCE-BACKED JSON
           </text>
-          <text className="detail" x="82" y="238">
-            hero / allocated points
+          <text className="detail" x="52" y="112">
+            catalogues and profiles
           </text>
-          <rect x="65" y="295" width="95" height="70" />
-          <text x="82" y="324">
-            UNIT
+          <rect x="282" y="55" width="195" height="82" />
+          <text x="299" y="84">
+            LOOKUP + AUDIT
           </text>
-          <text className="detail" x="82" y="348">
-            qty × pts
+          <text className="detail" x="299" y="112">
+            exact resolution / review
           </text>
-          <rect x="190" y="295" width="95" height="70" />
-          <text x="207" y="324">
-            UNIT
+          <rect x="529" y="55" width="195" height="82" />
+          <text x="546" y="84">
+            TYPESCRIPT DOMAIN
           </text>
-          <text className="detail" x="207" y="348">
-            qty × pts
+          <text className="detail" x="546" y="112">
+            pure army APIs
           </text>
-        </g>
-        <g className="system-node">
-          <rect x="475" y="185" width="220" height="70" />
-          <text x="492" y="214">
-            WARBAND 02
+          <rect x="529" y="222" width="195" height="82" />
+          <text x="546" y="251">
+            CALCULATE + VALIDATE
           </text>
-          <text className="detail" x="492" y="238">
-            hero / allocated points
+          <text className="detail" x="546" y="279">
+            totals / constraints
           </text>
-          <rect x="475" y="295" width="95" height="70" />
-          <text x="492" y="324">
-            UNIT
+          <rect x="282" y="222" width="195" height="82" />
+          <text x="299" y="251">
+            REACT NATIVE BUILDER
           </text>
-          <text className="detail" x="492" y="348">
-            qty × pts
+          <text className="detail" x="299" y="279">
+            domain-driven interface
           </text>
-          <rect x="600" y="295" width="95" height="70" />
-          <text x="617" y="324">
-            UNIT
+          <rect x="35" y="222" width="195" height="82" />
+          <text x="52" y="251">
+            LOCAL ARMY REPOSITORY
           </text>
-          <text className="detail" x="617" y="348">
-            qty × pts
+          <text className="detail" x="52" y="279">
+            offline drafts + saves
           </text>
         </g>
+        <g className="system-arrow army-flow-arrows">
+          <path d="M230 96h52M477 96h52M627 137v85M529 263h-52M282 263h-52" />
+        </g>
+        {detailed && (
+          <g className="diagram-notes">
+            <text x="35" y="374">
+              VERIFIED DOMAIN OUTPUTS
+            </text>
+            <text className="detail" x="35" y="407">
+              points + model totals / break value / bow allowance
+            </text>
+            <text className="detail" x="35" y="438">
+              warband capacity / mandatory leaders / General assignment
+            </text>
+            <text className="detail" x="35" y="469">
+              wargear + upgrades / saved-draft reconciliation
+            </text>
+          </g>
+        )}
       </svg>
     );
   if (kind === "pose")

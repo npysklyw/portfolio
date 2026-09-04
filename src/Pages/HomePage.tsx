@@ -1,10 +1,5 @@
-import { Link } from "react-router-dom";
 import { ProjectCard } from "../Components/ProjectCard";
-import {
-  earlierStudies,
-  featuredProjects,
-  publicArchive,
-} from "../content/projects";
+import { earlierStudies, featuredProjects } from "../content/projects";
 import { experience } from "../content/experience";
 
 export function HomePage() {
@@ -53,14 +48,10 @@ export function HomePage() {
       <section className="section featured" id="selected-systems">
         <div className="section-heading">
           <p className="eyebrow">01 / Selected systems</p>
-          <h2>
-            Current work,
-            <br />
-            shown with intent.
-          </h2>
+          <h2>Selected projects.</h2>
           <p>
-            Two active projects demonstrating product architecture, data
-            pipelines, and system-level decisions.
+            Two current projects with implementation notes and technical
+            decisions.
           </p>
         </div>
         <div className="featured-grid featured-grid-curated">
@@ -73,20 +64,19 @@ export function HomePage() {
         <div>
           <p className="eyebrow">02 / Engineering practice</p>
           <h2>
-            Systems should
+            Engineering across
             <br />
-            explain themselves.
+            the stack.
           </h2>
         </div>
         <div className="prose">
           <p>
             My work spans interfaces, services, data, and applied machine
-            learning. I focus on making the boundaries and trade-offs of a
-            system visible.
+            learning, from product flows to scheduled data pipelines.
           </p>
           <p>
-            That means treating architecture, product behaviour, and operational
-            constraints as parts of the same problem.
+            I connect architecture, product behaviour, and operational
+            constraints throughout implementation.
           </p>
         </div>
         <ul className="capability-list">
@@ -124,7 +114,7 @@ export function HomePage() {
       <section className="section">
         <div className="section-heading">
           <p className="eyebrow">04 / Experience</p>
-          <h2>A working record.</h2>
+          <h2>Experience.</h2>
         </div>
         <div className="ledger">
           {experience.map((job, i) => (
@@ -144,30 +134,9 @@ export function HomePage() {
           ))}
         </div>
       </section>
-      {publicArchive.length > 0 && (
-        <section className="section archive-preview">
-          <div className="section-heading">
-            <p className="eyebrow">05 / Technical breadth</p>
-            <h2>One earlier system.</h2>
-            <Link className="text-link" to="/work">
-              Open work index →
-            </Link>
-          </div>
-          <div className="archive-list">
-            {publicArchive.map((p) => (
-              <Link to={`/work/${p.slug}`} key={p.slug}>
-                <span>{p.year}</span>
-                <strong>{p.title}</strong>
-                <span>{p.kind}</span>
-                <span>View record →</span>
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
       <section className="section recognition">
         <div>
-          <p className="eyebrow">06 / Recognition</p>
+          <p className="eyebrow">05 / Recognition</p>
           <h2>Selected notes.</h2>
         </div>
         <div className="recognition-list">

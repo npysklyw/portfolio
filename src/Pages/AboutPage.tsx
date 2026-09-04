@@ -5,12 +5,11 @@ export function AboutPage() {
       <header className="about-header">
         <p className="eyebrow">About / Nicholas Pysklywec</p>
         <h1>
-          I build software that makes complex systems{" "}
-          <em>clearer and more useful.</em>
+          I build software that makes complex systems clearer and more useful.
         </h1>
         <div>
           <p>
-            I'm a Toronto-based software developer working across full-stack
+            I'm a Toronto-based software engineer working across full-stack
             applications, mobile products, applied machine learning, and
             automation.
           </p>
@@ -46,30 +45,6 @@ export function AboutPage() {
               </div>
             </article>
           ))}
-        </div>
-      </section>
-      <section className="section principles">
-        <p className="eyebrow">Working principles</p>
-        <div>
-          <h2>Make it inspectable.</h2>
-          <p>
-            Interfaces and models should expose enough of their logic to earn
-            trust.
-          </p>
-        </div>
-        <div>
-          <h2>Start with constraints.</h2>
-          <p>
-            Good technical decisions begin by naming what the system cannot
-            ignore.
-          </p>
-        </div>
-        <div>
-          <h2>Prefer useful clarity.</h2>
-          <p>
-            Novelty matters when it improves understanding—not when it competes
-            with it.
-          </p>
         </div>
       </section>
     </main>

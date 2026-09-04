@@ -2,12 +2,8 @@ export function Footer() {
   return (
     <footer className="footer">
       <div>
-        <p className="eyebrow">Open to thoughtful work</p>
-        <h2>
-          Build something
-          <br />
-          <em>worth understanding.</em>
-        </h2>
+        <p className="eyebrow">Get in touch</p>
+        <h2>Let’s build something useful.</h2>
       </div>
       <div className="footer-links">
         <a href="mailto:nicholas.pysklywec@gmail.com">Email</a>

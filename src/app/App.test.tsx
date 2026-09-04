@@ -35,5 +35,39 @@ describe("portfolio", () => {
     expect(
       screen.queryByText("Enterprise Endgame Evaluator"),
     ).not.toBeInTheDocument();
+    expect(screen.queryByText("ImageShare")).not.toBeInTheDocument();
+    expect(screen.queryByText("Future record")).not.toBeInTheDocument();
+  });
+
+  it("does not publish archived project routes", () => {
+    render(
+      <MemoryRouter initialEntries={["/work/image-share"]}>
+        <App />
+      </MemoryRouter>,
+    );
+    expect(
+      screen.getByRole("heading", {
+        name: "That project is not in the public selection.",
+      }),
+    ).toBeInTheDocument();
+  });
+
+  it("presents MESBG as a verified offline-first system", () => {
+    render(
+      <MemoryRouter initialEntries={["/work/mesbg-army-builder"]}>
+        <App />
+      </MemoryRouter>,
+    );
+    expect(screen.getByRole("link", { name: "Demo video ↗" })).toHaveAttribute(
+      "href",
+      "https://youtu.be/wost05aqULY",
+    );
+    expect(
+      screen.getByText("57 domain and storage tests passed"),
+    ).toBeInTheDocument();
+    expect(screen.getByText("LocalArmyRepository")).toBeInTheDocument();
+    expect(
+      screen.getByText(/development-only FastAPI and PostgreSQL/),
+    ).toBeInTheDocument();
   });
 });

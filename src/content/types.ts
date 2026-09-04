@@ -18,14 +18,16 @@ export interface Project {
   visual: VisualKind;
   featured: boolean;
   study?: boolean;
-  publicArchive?: boolean;
   coverImage?: string;
   demo?: string;
+  demoLabel?: string;
   github?: string;
   context: string;
   contribution: string[];
   decisions: { title: string; detail: string }[];
+  evidence?: { title: string; detail: string };
   system?: { summary: string; stages: SystemStage[] };
+  verification?: string[];
   reflection: string;
 }
 export interface Experience {
