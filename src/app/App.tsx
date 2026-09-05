@@ -11,6 +11,16 @@ function ScrollTop() {
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    const canonicalUrl = new URL(pathname, "https://nickp.netlify.app").href;
+    const canonical = document.querySelector<HTMLLinkElement>(
+      'link[rel="canonical"]',
+    );
+    const openGraphUrl = document.querySelector<HTMLMetaElement>(
+      'meta[property="og:url"]',
+    );
+    canonical?.setAttribute("href", canonicalUrl);
+    openGraphUrl?.setAttribute("content", canonicalUrl);
   }, [pathname]);
   return null;
 }
