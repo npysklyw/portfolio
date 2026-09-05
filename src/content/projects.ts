@@ -97,7 +97,7 @@ export const projects: Project[] = [
     "MESBG Army Builder",
     "2026",
     "Offline-first mobile application",
-    "An offline-first React Native army builder that turns complex roster data and game constraints into a structured, testable list-building workflow.",
+    "A mobile army builder for the Middle-earth Strategy Battle Game, designed for quick list building, offline use, and in-game tracking.",
     [
       "React Native",
       "TypeScript",
@@ -112,46 +112,46 @@ export const projects: Project[] = [
       role: "Product & engineering",
       status: "Active development",
       outcome:
-        "An offline-first mobile army builder with tested roster calculations, warband validation, and source-backed catalogue data.",
+        "A mobile army builder for the Middle-earth Strategy Battle Game, designed for quick list building, offline use, and in-game tracking.",
       demo: "https://youtu.be/wost05aqULY",
       demoLabel: "Demo video",
       github: "https://github.com/npysklyw/mesbg-companion",
       context:
-        "Manual army building involves more than adding point values. Rosters contain heroes, warbands, warriors, equipment, upgrades, capacity limits, mandatory leaders, and army-specific exceptions. The project converts that interconnected information into structured catalogue data and a mobile workflow that remains useful offline.",
+        "Building an MESBG army involves more than adding point values. Lists contain heroes, warbands, warriors, equipment, capacity limits, mandatory leaders, and army-specific restrictions. The app turns that information into structured catalogue data and provides a faster, more approachable alternative to manually managing lists.",
       contribution: [
-        "Built and refactored the React Native and Expo army-building interface",
-        "Extracted roster calculations into pure TypeScript domain APIs",
-        "Implemented reusable validation for warband capacity, mandatory leaders, General assignment, Independent Heroes, and bow limits",
-        "Added offline saved-army persistence and catalogue reconciliation through LocalArmyRepository",
-        "Replaced hand-maintained category mapping with exact lookup across active catalogues",
-        "Added automated domain tests, builder-reachability checks, and source-catalogue auditing",
-        "Corrected Army of Dale profiles and construction requirements against source material",
+        "Built the mobile army-building workflow with React Native and Expo",
+        "Modelled 111 armies using JSON-based hero, warrior, wargear, and upgrade data",
+        "Extracted calculations and validation into testable TypeScript domain APIs",
+        "Added offline drafts and saved armies through a local repository layer",
+        "Implemented a FastAPI and PostgreSQL backup API for saved armies",
+        "Added automated tests and catalogue checks to catch invalid or unreachable data",
       ],
+      decisionsHeading: "Key decisions.",
       decisions: [
         {
-          title: "Separate domain logic from UI",
+          title: "Keep rules outside the interface",
           detail:
-            "Roster calculations and validation use pure TypeScript APIs rather than living inside React components. The rules can be tested independently while the interface evolves.",
+            "Points, model totals, break values, bow limits, warband capacity, and leader requirements are calculated through pure TypeScript functions. This keeps rule logic testable without rendering the mobile interface.",
         },
         {
-          title: "Audit catalogue correctness",
+          title: "Design for offline use",
           detail:
-            "Exact catalogue lookup and automated audits surface unreachable armies, missing collections, zero-cost crew profiles, and other records that still need review.",
+            "Army creation, editing, game tracking, and saved lists work locally. Cloud backup supplements the local experience instead of becoming a requirement.",
         },
         {
-          title: "Reconcile stored armies",
+          title: "Treat catalogue data as fallible",
           detail:
-            "Saved drafts are matched against current catalogue entries so corrected requirements and selectable profiles can be applied without assuming old records remain valid forever.",
+            "Automated checks identify unreachable armies, suspicious records, missing collections, and other inconsistencies. Records that cannot be verified automatically remain explicitly marked for review.",
         },
       ],
       evidence: {
-        title: "Army of Dale correction",
+        title: "A concrete correction.",
         detail:
-          "Source review corrected hero and warrior profiles, represented mandatory selection separately from General assignment, moved the Windlance into the selectable warrior catalogue, and reconciled saved drafts with the corrected data.",
+          "Testing revealed that one army contained no selectable warriors. Reviewing its source material uncovered missing profiles, incorrectly categorized units, and an unrepresented mandatory-leader rule. The correction restored the proper selection options, separated mandatory selection from General assignment, represented the affected units correctly, and reconciled previously saved armies with the updated catalogue.",
       },
       system: {
         summary:
-          "Source-backed catalogue data flows through lookup and audit tooling into a tested TypeScript domain layer. React Native components consume that layer, while LocalArmyRepository keeps working and saved armies available offline.",
+          "Catalogue data is resolved through a shared TypeScript domain layer responsible for army calculations and validation. React Native components consume those APIs, while the repository layer manages offline drafts, saved armies, and compatibility with corrected catalogue data. The backend provides an optional path for remotely backing up armies without making the core mobile experience dependent on a network connection.",
         stages: [
           {
             label: "JSON catalogues",
@@ -180,15 +180,17 @@ export const projects: Project[] = [
         ],
       },
       verification: [
-        "57 domain and storage tests passed",
-        "TypeScript type checking passed",
-        "ESLint completed with 0 errors and 14 warnings",
-        "111 active armies resolved with 0 builder-reachability failures",
-        "Source comparison retained 26 cases for human review",
-        "Expo SDK 57 web export completed across 16 static routes",
+        "111 active armies resolve through the builder",
+        "57 domain, catalogue, and storage tests",
+        "Automated checks for army reachability and suspicious catalogue records",
+        "TypeScript and ESLint verification",
+        "Physical-device testing through Expo on iOS",
+        "FastAPI CRUD and backup integration tests",
       ],
+      verificationHeading: "Verification.",
       reflection:
-        "The current focus is reliable local list building and catalogue correctness. Structural checks still flag unusual profiles and source-comparison cases for human review. A development-only FastAPI and PostgreSQL backup slice exists, but authentication, stronger saved-list migrations, and production-ready multi-device synchronization remain planned.",
+        "The core mobile list-building workflow is usable today. Remaining work includes targeted catalogue verification, additional army-specific restrictions, authentication, and production-ready multi-device synchronization.",
+      reflectionHeading: "Current direction.",
     },
   ),
   common(

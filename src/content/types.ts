@@ -25,10 +25,13 @@ export interface Project {
   context: string;
   contribution: string[];
   decisions: { title: string; detail: string }[];
+  decisionsHeading?: string;
   evidence?: { title: string; detail: string };
   system?: { summary: string; stages: SystemStage[] };
   verification?: string[];
+  verificationHeading?: string;
   reflection: string;
+  reflectionHeading?: string;
 }
 export interface Experience {
   organization: string;

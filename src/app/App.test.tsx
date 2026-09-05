@@ -63,11 +63,11 @@ describe("portfolio", () => {
       "https://youtu.be/wost05aqULY",
     );
     expect(
-      screen.getByText("57 domain and storage tests passed"),
+      screen.getByText("57 domain, catalogue, and storage tests"),
     ).toBeInTheDocument();
     expect(screen.getByText("LocalArmyRepository")).toBeInTheDocument();
     expect(
-      screen.getByText(/development-only FastAPI and PostgreSQL/),
+      screen.getByText(/production-ready multi-device synchronization/),
     ).toBeInTheDocument();
   });
 });

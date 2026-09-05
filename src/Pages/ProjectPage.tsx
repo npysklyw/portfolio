@@ -145,7 +145,7 @@ export function ProjectPage() {
       {project.decisions.length > 0 && (
         <section className="case-section">
           <p className="eyebrow">{project.system ? "04" : "03"} / Decisions</p>
-          <h2>Choices and trade-offs.</h2>
+          <h2>{project.decisionsHeading ?? "Choices and trade-offs."}</h2>
           <div className="decision-grid">
             {project.decisions.map((decision, n) => (
               <article key={decision.title}>
@@ -168,7 +168,7 @@ export function ProjectPage() {
         <section className="case-section verification-section">
           <div>
             <p className="eyebrow">05 / Verification</p>
-            <h2>Current checks.</h2>
+            <h2>{project.verificationHeading ?? "Current checks."}</h2>
           </div>
           <ul>
             {project.verification.map((check) => (
@@ -180,7 +180,7 @@ export function ProjectPage() {
       <section className="case-section split">
         <div>
           <p className="eyebrow">{reflectionNumber} / Reflection</p>
-          <h2>Limits and next steps.</h2>
+          <h2>{project.reflectionHeading ?? "Limits and next steps."}</h2>
         </div>
         <p className="large-copy">{project.reflection}</p>
       </section>
