@@ -113,7 +113,7 @@ export const projects: Project[] = [
       status: "Active development",
       outcome:
         "A mobile army builder for the Middle-earth Strategy Battle Game, designed for quick list building, offline use, and in-game tracking.",
-      demo: "https://youtu.be/wost05aqULY",
+      demo: "https://youtube.com/shorts/LYcpOo4tMMY?feature=share",
       demoLabel: "Demo video",
       github: "https://github.com/npysklyw/mesbg-companion",
       context:
