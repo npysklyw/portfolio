@@ -6,7 +6,7 @@ export function Footer() {
         <h2>Let’s build something useful.</h2>
       </div>
       <div className="footer-links">
-        <a href="mailto:nicholas.pysklywec@gmail.com">Email</a>
+        <a href="mailto:nick.pysklywec@pm.me">Email</a>
         <a
           href="https://www.linkedin.com/in/nick-py/"
           target="_blank"
