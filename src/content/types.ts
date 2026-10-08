@@ -1,5 +1,5 @@
 export type VisualKind =
-  "signal" | "graph" | "pose" | "model" | "network" | "neutral";
+  "benchwarden" | "signal" | "graph" | "pose" | "model" | "network" | "neutral";
 export interface SystemStage {
   label: string;
   detail: string;

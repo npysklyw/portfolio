@@ -50,8 +50,7 @@ export function HomePage() {
           <p className="eyebrow">01 / Selected systems</p>
           <h2>Selected projects.</h2>
           <p>
-            Two current projects with implementation notes and technical
-            decisions.
+            Current projects with implementation notes and technical decisions.
           </p>
         </div>
         <div className="featured-grid featured-grid-curated">
@@ -108,7 +107,11 @@ export function HomePage() {
           </p>
         </div>
         {earlierStudies.map((p, i) => (
-          <ProjectCard key={p.slug} project={p} index={i + 2} />
+          <ProjectCard
+            key={p.slug}
+            project={p}
+            index={i + featuredProjects.length}
+          />
         ))}
       </section>
       <section className="section">

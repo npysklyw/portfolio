@@ -1,3 +1,4 @@
+import { useId } from "react";
 import type { VisualKind } from "../content/types";
 
 type Props = {
@@ -8,11 +9,69 @@ type Props = {
 };
 
 export function ProjectVisual({ kind, label, image, detailed = false }: Props) {
+  const id = useId();
   if (image)
     return (
       <figure className="project-visual image-cover">
         <img src={image} alt={`${label} project interface`} loading="lazy" />
       </figure>
+    );
+  if (kind === "benchwarden")
+    return (
+      <svg
+        className="project-visual system-visual benchwarden-visual"
+        viewBox="0 0 360 520"
+        role="img"
+        aria-labelledby={`${id}-title ${id}-desc`}
+      >
+        <title id={`${id}-title`}>Benchwarden evaluation architecture</title>
+        <desc id={`${id}-desc`}>
+          Evaluation cases and configurations feed a runner using a
+          deterministic offline fake provider and typed support tools. Execution
+          stores traces and results in PostgreSQL. Versioned scoring feeds
+          metrics, baseline comparison, and configurable CI gates.
+        </desc>
+        <g className="system-guide">
+          <path d="M180 20V500" />
+        </g>
+        {[
+          ["CASES + CONFIGURATIONS", "scenarios / expectations / snapshots"],
+          [
+            "EXECUTION RUNNER",
+            "deterministic / offline fake provider",
+            "typed fictional support tools",
+          ],
+          ["STORED TRACES + RESULTS", "PostgreSQL / execution evidence"],
+          ["VERSIONED SCORING", "output / tool calls / arguments"],
+          ["COMPARISON + CI GATES", "baseline vs candidate / metrics"],
+        ].map(([title, detail, extra], index) => {
+          const y = 20 + index * 100;
+          return (
+            <g
+              className={`system-node${index === 4 ? " output" : ""}`}
+              key={title}
+            >
+              <rect x="20" y={y} width="320" height="80" />
+              <text x="36" y={y + 25}>
+                {title}
+              </text>
+              <text className="detail" x="36" y={y + 47}>
+                {detail}
+              </text>
+              {extra && (
+                <text className="detail" x="36" y={y + 66}>
+                  {extra}
+                </text>
+              )}
+              {index < 4 && (
+                <g className="system-arrow">
+                  <path d={`M180 ${y + 80}v20m-4-5 4 5 4-5`} />
+                </g>
+              )}
+            </g>
+          );
+        })}
+      </svg>
     );
   if (kind === "signal")
     return (

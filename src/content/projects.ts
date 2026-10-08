@@ -32,6 +32,97 @@ const common = (
 });
 export const projects: Project[] = [
   common(
+    "benchwarden",
+    "Benchwarden",
+    "2026",
+    "AI agent evaluation",
+    "An evaluation backend for tool-calling AI agents, with repeatable test runs, execution traces, deterministic scoring, and CI regression gates.",
+    [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "SQLAlchemy",
+      "Docker",
+      "GitHub Actions",
+    ],
+    {
+      featured: true,
+      visual: "benchwarden",
+      role: "Design & engineering",
+      status: "Active development",
+      github: "https://github.com/npysklyw/Benchwarden",
+      context:
+        "An agent can return a plausible answer while selecting the wrong tool, passing incorrect arguments, or introducing regressions. I independently developed Benchwarden as a personal project, separate from my IBM work, to make those failures explicit through structured scenarios, recorded execution, deterministic scoring, and comparisons between runs.",
+      contribution: [
+        "Built FastAPI APIs for projects, configurations, datasets, cases, and evaluation runs, with PostgreSQL persistence through SQLAlchemy and Alembic migrations",
+        "Implemented an offline execution runner using a deterministic fake provider and typed fictional support tools",
+        "Stored execution traces and case results alongside snapshots of run inputs and expectations",
+        "Added versioned deterministic scorers for output, tool selection, and tool-argument expectations",
+        "Built metrics aggregation and baseline-versus-candidate comparison, exposed through APIs and CLI commands",
+        "Integrated configurable regression gates into GitHub Actions using the run, score, compare, and check commands",
+      ],
+      decisions: [
+        {
+          title: "Make infrastructure tests repeatable",
+          detail:
+            "Deterministic offline scenarios exercise the runner, persistence, scoring, and gates without API keys or model variability. They verify the evaluation machinery; they do not establish real-model quality, and measured wall-clock latency still varies.",
+        },
+        {
+          title: "Separate execution from evaluation",
+          detail:
+            "A tool or provider error is different from a completed response that fails an expectation. Execution errors remain unscored, and evaluation outcomes never overwrite execution status. Coverage and end-to-end success metrics keep those errors visible.",
+        },
+        {
+          title: "Require evidence before a gate passes",
+          detail:
+            "Baseline checks validate compatible datasets, inputs, expectations, and scorer versions, with identical case sets required for gates. Runs must be finished and eligible cases scored. Missing requested measurements fail the check instead of becoming zero; cost comparisons also require matching pricing snapshots.",
+        },
+      ],
+      system: {
+        summary:
+          "FastAPI and the CLI share application services backed by PostgreSQL. Cases and configuration snapshots feed the offline runner; stored traces and results feed deterministic scoring, metrics, run comparison, and read-only CI gate policies.",
+        stages: [
+          {
+            label: "Evaluation inputs",
+            detail:
+              "Dataset cases, explicit expectations, and configuration snapshots",
+          },
+          {
+            label: "Offline execution",
+            detail:
+              "Deterministic fake provider and typed fictional support tools",
+          },
+          {
+            label: "Recorded evidence",
+            detail: "PostgreSQL execution traces, outputs, and error results",
+          },
+          {
+            label: "Versioned scoring",
+            detail: "Output, tool selection, and argument expectations",
+          },
+          {
+            label: "Run comparison",
+            detail: "Metrics and compatible baseline-versus-candidate results",
+          },
+          {
+            label: "CI gates",
+            detail:
+              "Configured quality, coverage, error, and regression thresholds",
+          },
+        ],
+      },
+      verification: [
+        "Runner tests cover tool execution, provider failures, and execution limits",
+        "Scoring tests cover explicit expectations and compatibility between runs",
+        "Gate tests cover threshold boundaries, missing measurements, and zero baselines",
+        "PostgreSQL integration tests exercise migrations and CLI workflows, including passing gates and controlled regressions",
+      ],
+      reflectionHeading: "Current direction.",
+      reflection:
+        "The backend currently evaluates deterministic offline scenarios. The React/TypeScript frontend is a foundation shell; a finished dashboard, real model-provider integrations, and failure replay remain future work.",
+    },
+  ),
+  common(
     "sentiment-terminal",
     "Sentiment Terminal",
     "2026",

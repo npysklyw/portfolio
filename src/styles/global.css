@@ -674,6 +674,9 @@ dd {
   .case-header > div {
     order: 2;
   }
+  .case-header:has(.benchwarden-visual) h1 {
+    font-size: clamp(44px, 12vw, 70px);
+  }
   .case-section {
     padding: 80px 0;
   }
@@ -967,6 +970,21 @@ dd {
   grid-column: 9/13;
   margin-top: 230px;
 }
+.featured-grid-curated .project-card-3 {
+  grid-column: 1/8;
+}
+.benchwarden-visual {
+  aspect-ratio: 360 / 520;
+  max-height: 560px;
+}
+.benchwarden-visual .system-node text {
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+.benchwarden-visual .system-node text.detail {
+  font-size: 13px;
+  letter-spacing: 0;
+}
 .index-heading {
   display: grid;
   grid-template-columns: 3fr 6fr 3fr;
@@ -1189,7 +1207,8 @@ dd {
     border-left: 1px solid var(--rule);
   }
   .featured-grid-curated .project-card-1,
-  .featured-grid-curated .project-card-2 {
+  .featured-grid-curated .project-card-2,
+  .featured-grid-curated .project-card-3 {
     grid-column: 1/-1;
     margin: 0;
   }

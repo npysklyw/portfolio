@@ -8,7 +8,7 @@ export function WorkPage() {
         <p className="eyebrow">Work / Curated index</p>
         <h1>Selected work.</h1>
         <p>
-          Two current projects and an earlier computer-vision capstone, with
+          Current projects and an earlier computer-vision capstone, with
           implementation notes and technical decisions.
         </p>
       </header>
@@ -36,7 +36,11 @@ export function WorkPage() {
           </p>
         </div>
         {earlierStudies.map((p, i) => (
-          <ProjectCard key={p.slug} project={p} index={i + 2} />
+          <ProjectCard
+            key={p.slug}
+            project={p}
+            index={i + featuredProjects.length}
+          />
         ))}
       </section>
     </main>
